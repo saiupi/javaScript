@@ -1,0 +1,59 @@
+
+<html>
+    <head>
+        <style>
+            .democlass {
+                color: red;
+              }
+              img{
+                  border: 2px solid red;
+              }
+        </style>
+            
+    </head>
+<body>
+
+<p>number</p>
+
+<button onclick="number()">number</button>
+
+<p id="demo"></p>
+
+
+<script>
+function number() {
+  var person = prompt(" your number", "");
+  if (person>0) {
+    document.getElementById("demo").innerHTML ="p";
+  }
+  else if(person<0){
+    document.getElementById("demo").innerHTML ="n";
+  }
+  else{
+    document.getElementById("demo").innerHTML ="zero";
+  
+  }
+  
+}
+</script>
+
+
+
+<h1>Hello World</h1>
+<h1>Hello World</h1>
+<h1>Hello World</h1>
+<button onclick="myFunction()">h1 tag</button>
+<img src="download.jpg" onclick="img()">
+<script>
+        function myFunction() {
+          document.getElementsByTagName("h1")[0].setAttribute("class", "democlass"); 
+          for(var i=0;i)
+        }
+        </script>
+        <script>
+function img(){
+    document.getElementsByTagName("img")[0].setAttribute("src", "images.jpg"); 
+}
+        </script>
+</body>
+</html>
