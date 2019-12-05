@@ -50,10 +50,59 @@
   <input type="text" name="email" id="email"><br><br>
   <button value="sumbit" onclick="kaladatrav()">kaladaTraveller</button>
   <h5 id ="kalada" style="color:#df972d;font-size:25px;"></h5>
+  <input type="text" id="a1" onfocus="onf()" onblur="myblur()">
+  <p id="mes"></p>
 
+<select id="citys" onchange="citys()">
+  <option>hyd</option>
+  <option>bcm</option>
+
+  <option>kmm</option>
+
+  <option>rcp</option>
+
+  <option>ktd</option>
+
+
+</select>
+<div id="cit">
+
+</div>
+<input type="text" palceholder="enter name" id="nam">
+<button onclick="validtions()">validtions</button>
 
   <script>
+function validtions(){
+  var name=document.getElementById('nam').value;
+  if(name.length<4){
+    alert(name)
+    alert("minmum 4 chacters"+name);
 
+  }
+  else{
+    alert("sai")
+  }
+}
+
+
+
+    function citys(){
+      var city=document.getElementById('citys').value;
+      alert(city  
+      )
+      document.getElementById("cit").innerHTML="select your city"+city;
+
+    }
+
+
+
+function onf() {
+  a1.style.background = "yellow";
+}
+function myblur(){
+  a1.style.background = "red";
+  document.getElementById('a1').innerHTML="urot kdfd"
+}
     function kaladatrav() {
         var number =  document.getElementById("number").value;;
         var email = document.getElementById("email").value;;
