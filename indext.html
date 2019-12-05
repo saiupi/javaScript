@@ -70,8 +70,29 @@
 </div>
 <input type="text" palceholder="enter name" id="nam">
 <button onclick="validtions()">validtions</button>
-
+<div id="mess"></div>
   <script>
+document.write("<h2>helloo</h2>")
+
+   var  messages= [{
+        "msgFrom": "9030424073",
+        "msgBody": "Hi there"
+        } ,
+        {
+        "msgFrom": "9704969240",
+        "msgBody": "Hi four"
+        } ,
+        {
+        "msgFrom": "9912814853",
+        "msgBody": "Hi five"
+        } ]
+        for(p in messages){
+          document.getElementById("mess").innerHTML+=p+""+messages[p].msgFrom+"<br>"+""+messages[p].msgBody;
+        }
+
+
+
+
 function validtions(){
   var name=document.getElementById('nam').value;
   if(name.length<4){
