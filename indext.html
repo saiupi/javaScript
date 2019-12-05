@@ -1,59 +1,140 @@
-
 <html>
-    <head>
-        <style>
-            .democlass {
-                color: red;
-              }
-              img{
-                  border: 2px solid red;
-              }
-        </style>
-            
-    </head>
+
+<head>
+  <style>
+    .democlass {
+      color: red;
+    }
+
+    img {
+      border: 2px solid red;
+      width: 200px;
+      height: 200px;
+
+    }
+  </style>
+
+</head>
+
 <body>
 
-<p>number</p>
+  <p>number</p>
 
-<button onclick="number()">number</button>
-
-<p id="demo"></p>
-
-
-<script>
-function number() {
-  var person = prompt(" your number", "");
-  if (person>0) {
-    document.getElementById("demo").innerHTML ="p";
-  }
-  else if(person<0){
-    document.getElementById("demo").innerHTML ="n";
-  }
-  else{
-    document.getElementById("demo").innerHTML ="zero";
-  
-  }
-  
-}
-</script>
+  <button onclick="number()">nagativePositive</button>
+  <button onclick="evenOdd()">evenOdd</button>
 
 
+  <p id="demo"></p>
+  <h3>hello saikumar</h3>
+  <h3>hello naveen</h3>
 
-<h1>Hello World</h1>
-<h1>Hello World</h1>
-<h1>Hello World</h1>
-<button onclick="myFunction()">h1 tag</button>
-<img src="download.jpg" onclick="img()">
-<script>
-        function myFunction() {
-          document.getElementsByTagName("h1")[0].setAttribute("class", "democlass"); 
-          for(var i=0;i)
-        }
-        </script>
-        <script>
-function img(){
-    document.getElementsByTagName("img")[0].setAttribute("src", "images.jpg"); 
-}
-        </script>
+  <h3>hello mahesh</h3>
+  <h3>hello akram</h3>
+  <h3>hello aditya </h3>
+  <h3>hello venu and rk</h3>
+  <button onclick="htags()">tagscolorchange</button><br><br>
+
+
+  <!-- <form name="kallada" onsubmit="kalada()">
+    <input type="text" name="number">
+    <input type="text" name="email">
+    <button value="sumbit">Sumbit</button>
+    <h4 id="kala"></h4>
+
+  </form> -->
+  <img src="bus.jpg"><br><br>
+
+  number:-
+  <input type="text" name="number" id="number"> <br><br>
+  email:-
+  <input type="text" name="email" id="email"><br><br>
+  <button value="sumbit" onclick="kaladatrav()">kaladaTraveller</button>
+  <h5 id ="kalada" style="color:#df972d;font-size:25px;"></h5>
+
+
+  <script>
+
+    function kaladatrav() {
+        var number =  document.getElementById("number").value;;
+        var email = document.getElementById("email").value;;
+        var text;
+      //   if (number == "" && email == "") {
+      //     // alert("number" + number + "email" + email);
+      //     text="invalide number and email"
+      //     var forms = document.getElementById("kala").innerHTML = text;
+      //     // document.write(forms);
+      //     // alert("hellohow"+forms);
+      //   }
+      //   // alert(text);
+      //   var res=document.getElementById("kala").innerHTML = text;
+      //   alert("resutls:-"+res);
+      //   document.write(res)
+      //   // res[0].setAttribute('h4',res)
+      // }
+
+
+      if (number == "" || email == "") {
+        text = "email and number is required";
+      } else {
+        text = " valided";
+      }
+      document.getElementById("kalada").innerHTML = text;
+    }
+
+    function htags() {
+      var k = document.getElementsByTagName("h3")
+      for (j = 0; j < k.length; j++) {
+        k[j].style.color = "red";
+      }
+
+    }
+
+
+    function number() {
+      var person = prompt(" your number", "");
+      if (person > 0) {
+        document.getElementById("demo").innerHTML = "p";
+      }
+      else if (person < 0) {
+        document.getElementById("demo").innerHTML = "n";
+      }
+      else {
+        document.getElementById("demo").innerHTML = "zero";
+
+      }
+
+    }
+
+    function evenOdd() {
+      var ed = prompt();
+      if (ed % 2 == 0) {
+        document.getElementById("demo").innerHTML = "even";
+
+      }
+      else {
+        document.getElementById("demo").innerHTML = "odd";
+
+      }
+    }
+  </script>
+
+
+
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <h1>Hello World</h1>
+  <button onclick="myFunction()">h1 tag</button>
+  <img src="imgo.jpg" onclick="img()">
+  <script>
+    function myFunction() {
+      document.getElementsByTagName("h1")[0].setAttribute("class", "democlass");
+
+    }
+
+    function img() {
+      document.getElementsByTagName("img")[0].setAttribute("src", "traffic3.jpg");
+    }
+  </script>
 </body>
+
 </html>
