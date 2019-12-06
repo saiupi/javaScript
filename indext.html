@@ -12,11 +12,14 @@
       height: 200px;
 
     }
+    h2{
+      color:green;
+    }
   </style>
 
 </head>
 
-<body ononline="onf()" onoffline="offl()" onload="onl()">
+<body >
 
   <p>number</p>
 
@@ -48,11 +51,11 @@
   <input type="text" name="number" id="number"> <br><br>
   email:-
   <input type="text" name="email" id="email"><br><br>
-  <button value="sumbit" onclick="kaladatrav()">kaladaTraveller</button>
+  <button value="sumbit" onclick="kaladatrav()" >kaladaTraveller</button>
   <h5 id="kalada" style="color:#df972d;font-size:25px;"></h5>
   <input type="text" id="a1" onfocus="onf()" onblur="myblur()">
   <p id="mes"></p>
-  <h2 style="color:green">onchange</h2>
+  <h2>onchange</h2>
 
   <select id="citys" onchange="citys()">
     <option>hyd</option>
@@ -74,25 +77,25 @@
   <div id="mess"></div>
 
   <h2 style="color:red">Offline/ online</h2>
-  <h2 style="color:green">onblur</h2>
+  <h2 >onblur</h2>
 
   <input type="text" id="name" name="name" onblur="nblr()">
-  <h2 style="color:green">oncopy</h2>
+  <h2 >oncopy</h2>
   <input type="text" id="name" name="name" value="Try to copy this text" oncopy="nc()">
   <div id="chnage"></div>
-  <h2 style="color:green">cut</h2>
+  <h2 >cut</h2>
   <input type="text" oncut="nct()" value="try to cut this text">
   <div id="cut"></div>
-  <h2 style="color:green">ondblclick</h2>
+  <h2 >ondblclick</h2>
   <button ondblclick="ndc()">ondblclick</button>
   <div id="ndc"></div>
-  <h2 style="color:green">onerror</h2>
+  <h2>onerror</h2>
   <img src="img.jpg" onerror="oner()">
 
   <div id="oner"></div>
-  <h2 style="color:green">onfocus</h2>
+  <h2 >onfocus</h2>
   <input type="text" onfocus="myFun()" id="onfo">
-  <h2 style="color:green">onhashchange</h2>
+  <h2 >onhashchange</h2>
 
   <div onhashchange="onchang()">
     hai saikumar
@@ -102,27 +105,117 @@
 
 
   </div>
-  <h2 style="color:green">oninput</h2>
+  <h2 >oninput</h2>
   <input type="text" id="input" oninput="onin()">
   <div id="in"></div>
-  <h2 style="color:green">oninvalid</h2>
+  <h2 >oninvalid</h2>
   <form>
     <input type="text" oninvalid="valide()" id="inpu" required>
     <input type="submit" value="sumbit">
   </form>
-  <h2 style="color:green"> onkeydown/keypress</h2>
+  <h2 > onkeydown/keypress</h2>
   <input type="text" onkeydown="onkey()">
-  <h2 style="color:green">onkeyup</h2>
+  <h2 >onkeyup</h2>
   <input type="text" id="keyup">
-  <h2 style="color:green">onload</h2>
-  <h2 style="color:green"> onsearch</h2>
+  <h2 >onload</h2>
+  <h2 > onsearch</h2>
   <input type="search" id="onsearc" onsearch="onserch()">
   <div id="ss"></div>
-
+  <h2 >  addEventListener</h2>
+  <button id="addeen" >addEventListener</button>
+  <input type="text" id="cop" value="dfsafasfdfsdaf">
+<div id="copy"></div>
+<form name="loginform" method="post" action="next.html" onsubmit="return loginsumbit()" >
+  <input type="text" placeholder="fname" id="fname" name="fname">
+  <input type="text" placeholder="lname" id="lname" name="lname">
+  <input type="email" placeholder="email" id="email" name="email">
+  <input type="password" placeholder="password" id="pswd" name="pswd">
+  <button value="submit">sumbit</button>
+  <div id="kal"></div>
+</form>
 
   <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
   <script>
+function loginsumbit(){
+  var tes;
+  var f=document.loginform.fname.value;
+  var l=document.loginform.lname.value;
+  var e=document.loginform.email.value;
+  var p=document.loginform.pswd.value;
+
+  if(f.length<4){
+    // tes = "email and number is required";
+    alert("fminim 4 lenght is required");
+
+    return false;
+   
+  }
+  else if(l.length<4){
+    alert("l minimum 4 lenght is required");
+    // tes = "email and number is required";
+    return false;
+
+  }
+  else if(e==""){
+    alert("email @  is required");
+    return false;
+
+  }
+  else if(p.length<4){
+    alert("password is 4 chartecrt required");
+    return false;
+
+  }
+
+  else{
+ 
+    alert("sai");
+   
+    return true;
+    
+
+  }
+ 
+
+
+}
+
+
+
+
+
+document.getElementById("addeen").addEventListener("click",function(){
+var s=document.getElementById("en").innerHTML="saikumar";
+alert(s);
+});
+document.getElementById("cop").addEventListener("copy",(e)=>{
+e.preventDefault();
+  //  var s=document.getElementById("copy").innerHTML="saikumar";
+alert("dont copy");
+});
+
+
+
+
+
+
+person=[{
+  name:"sai",
+  id:[19306,1856],
+  code:"k360"
+},
+{
+  name:"mahesh ",
+  id:[1906,5689],
+  code:"k960"
+},
+{
+  name:"satish",
+  id:19306,
+  code:"k260"
+}]
+
 
 function onserch(){
  var s= document.getElementById("onsearc");
@@ -167,9 +260,9 @@ function onserch(){
       // x.style.background = "yellow";
       document.getElementById("onfo").style.backgroundColor = "red";
     }
-    function oner() {
-      alert("images  is not loadded onerror")
-    }
+    // function oner() {
+    //   alert("images  is not loadded onerror")
+    // }
     function ndc() {
       document.getElementById('ndc').innerHTML = "  it selected ondbleclick";
     }
