@@ -16,7 +16,7 @@
 
 </head>
 
-<body>
+<body ononline="onf()" onoffline="offl()" onload="onl()">
 
   <p>number</p>
 
@@ -49,85 +49,209 @@
   email:-
   <input type="text" name="email" id="email"><br><br>
   <button value="sumbit" onclick="kaladatrav()">kaladaTraveller</button>
-  <h5 id ="kalada" style="color:#df972d;font-size:25px;"></h5>
+  <h5 id="kalada" style="color:#df972d;font-size:25px;"></h5>
   <input type="text" id="a1" onfocus="onf()" onblur="myblur()">
   <p id="mes"></p>
+  <h2 style="color:green">onchange</h2>
 
-<select id="citys" onchange="citys()">
-  <option>hyd</option>
-  <option>bcm</option>
+  <select id="citys" onchange="citys()">
+    <option>hyd</option>
+    <option>bcm</option>
 
-  <option>kmm</option>
+    <option>kmm</option>
 
-  <option>rcp</option>
+    <option>rcp</option>
 
-  <option>ktd</option>
+    <option>ktd</option>
 
 
-</select>
-<div id="cit">
+  </select>
+  <div id="cit">
 
-</div>
-<input type="text" palceholder="enter name" id="nam">
-<button onclick="validtions()">validtions</button>
-<div id="mess"></div>
+  </div>
+  <input type="text" palceholder="enter name" id="nam">
+  <button onclick="validtions()">validtions</button>
+  <div id="mess"></div>
+
+  <h2 style="color:red">Offline/ online</h2>
+  <h2 style="color:green">onblur</h2>
+
+  <input type="text" id="name" name="name" onblur="nblr()">
+  <h2 style="color:green">oncopy</h2>
+  <input type="text" id="name" name="name" value="Try to copy this text" oncopy="nc()">
+  <div id="chnage"></div>
+  <h2 style="color:green">cut</h2>
+  <input type="text" oncut="nct()" value="try to cut this text">
+  <div id="cut"></div>
+  <h2 style="color:green">ondblclick</h2>
+  <button ondblclick="ndc()">ondblclick</button>
+  <div id="ndc"></div>
+  <h2 style="color:green">onerror</h2>
+  <img src="img.jpg" onerror="oner()">
+
+  <div id="oner"></div>
+  <h2 style="color:green">onfocus</h2>
+  <input type="text" onfocus="myFun()" id="onfo">
+  <h2 style="color:green">onhashchange</h2>
+
+  <div onhashchange="onchang()">
+    hai saikumar
+    <button type="sumbit" onclick="haschange()">sumbit</button>
+    <div id="hc"></div>
+
+
+
+  </div>
+  <h2 style="color:green">oninput</h2>
+  <input type="text" id="input" oninput="onin()">
+  <div id="in"></div>
+  <h2 style="color:green">oninvalid</h2>
+  <form>
+    <input type="text" oninvalid="valide()" id="inpu" required>
+    <input type="submit" value="sumbit">
+  </form>
+  <h2 style="color:green"> onkeydown/keypress</h2>
+  <input type="text" onkeydown="onkey()">
+  <h2 style="color:green">onkeyup</h2>
+  <input type="text" id="keyup">
+  <h2 style="color:green">onload</h2>
+  <h2 style="color:green"> onsearch</h2>
+  <input type="search" id="onsearc" onsearch="onserch()">
+  <div id="ss"></div>
+
+
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
   <script>
-document.write("<h2>helloo</h2>")
 
-   var  messages= [{
-        "msgFrom": "9030424073",
-        "msgBody": "Hi there"
-        } ,
-        {
-        "msgFrom": "9704969240",
-        "msgBody": "Hi four"
-        } ,
-        {
-        "msgFrom": "9912814853",
-        "msgBody": "Hi five"
-        } ]
-        for(p in messages){
-          document.getElementById("mess").innerHTML+=p+""+messages[p].msgFrom+"<br>"+""+messages[p].msgBody;
-        }
-
-
-
-
-function validtions(){
-  var name=document.getElementById('nam').value;
-  if(name.length<4){
-    alert(name)
-    alert("minmum 4 chacters"+name);
-
-  }
-  else{
-    alert("sai")
-  }
+function onserch(){
+ var s= document.getElementById("onsearc");
+ document.getElementById("ss").innerHTML="onsearch:"+s.value;
 }
 
+    function onl() {
+      alert("page is loading")
+    }
+
+    document.getElementById('keyup').onkeyup = function () { onkup() };
+    function onkup() {
+      var k = document.getElementById('keyup');
+      k.value = k.value.toUpperCase();
+    }
+
+    function onkey() {
+      alert("input added is onkeydown")
+
+    }
+
+    document.getElementById("inpu").oninvalid = function () { valide() };
+    function valide() {
+      alert("name is requred")
+
+    }
+    function onin() {
+      var a = document.getElementById('input').value;
+      document.getElementById('in').innerHTML = "name:" + a;
+    }
+    function haschange() {
+      location.hash = "part5";
+      var x = location.hash;
+      document.getElementById("hc").innerHTML = "The anchor part is now: " + x;
+    }
+    function onchang() {
+      alert("The anchor part has changed!");
+    }
 
 
-    function citys(){
-      var city=document.getElementById('citys').value;
-      alert(city  
+    function myFun() {
+      // x.style.background = "yellow";
+      document.getElementById("onfo").style.backgroundColor = "red";
+    }
+    function oner() {
+      alert("images  is not loadded onerror")
+    }
+    function ndc() {
+      document.getElementById('ndc').innerHTML = "  it selected ondbleclick";
+    }
+    function nct() {
+      document.getElementById("cut").innerHTML = "cut this slectied";
+    }
+    function nc() {
+      var x = document.getElementById("chnage").innerHTML = "copy this selected";
+      alert(x)
+
+    }
+
+    function nblr() {
+      var k = document.getElementById('name');
+      k.value = k.value.toUpperCase();
+
+    }
+
+    function onf() {
+      alert("online");
+    }
+    function offl() {
+      alert("offline");
+    }
+
+
+    document.write("<h2>helloo</h2>")
+
+    var messages = [{
+      "msgFrom": "9030424073",
+      "msgBody": "Hi there"
+    },
+    {
+      "msgFrom": "9704969240",
+      "msgBody": "Hi four"
+    },
+    {
+      "msgFrom": "9912814853",
+      "msgBody": "Hi five"
+    }]
+    for (p in messages) {
+      document.getElementById("mess").innerHTML += p + "" + messages[p].msgFrom + "<br>" + "" + messages[p].msgBody;
+    }
+
+
+
+
+    function validtions() {
+      var name = document.getElementById('nam').value;
+      if (name.length < 4) {
+        alert(name)
+        alert("minmum 4 chacters" + name);
+
+      }
+      else {
+        alert("sai")
+      }
+    }
+
+
+
+    function citys() {
+      var city = document.getElementById('citys').value;
+      alert(city
       )
-      document.getElementById("cit").innerHTML="select your city"+city;
+      document.getElementById("cit").innerHTML = "select your city" + city;
 
     }
 
 
 
-function onf() {
-  a1.style.background = "yellow";
-}
-function myblur(){
-  a1.style.background = "red";
-  document.getElementById('a1').innerHTML="urot kdfd"
-}
+    function onf() {
+      a1.style.background = "yellow";
+    }
+    function myblur() {
+      a1.style.background = "red";
+      document.getElementById('a1').innerHTML = "urot kdfd"
+    }
     function kaladatrav() {
-        var number =  document.getElementById("number").value;;
-        var email = document.getElementById("email").value;;
-        var text;
+      var number = document.getElementById("number").value;;
+      var email = document.getElementById("email").value;;
+      var text;
       //   if (number == "" && email == "") {
       //     // alert("number" + number + "email" + email);
       //     text="invalide number and email"
