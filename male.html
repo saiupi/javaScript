@@ -1,0 +1,92 @@
+<htm>
+
+    <head>
+        <style>
+            #profileImage {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background: #512DA8;
+                font-size: 35px;
+                color: #fff;
+                text-align: center;
+                line-height: 150px;
+                margin: 20px 0;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <input type="text" name="fname" id="fname">
+        <input type="text" name="lname" id="lname">
+        <div *ngIf="status">
+            <div id="profileImage"></div>
+
+        </div>
+        <button onclick="flname()">sumbits</button>
+        Check it!
+        <input type="checkBox" id="myInpu" onclick="GetCheckedState();" />angular
+        <p id="mas"></p><br>
+        <input type="checkBox" id="myInput" onclick="GetChecked();" />javascript
+        <p id="fem"></p><br>
+        <input type="checkbox" id="nodejs" onclick="nodejs()">nodjes
+        <p id="node"></p><br>
+
+
+
+
+        <script>
+            function nodejs() {
+                var node = document.getElementById("nodejs");
+                var nodejs = node.checked;
+
+                nodejs = (nodejs) ? "nodejs" : "";
+                document.getElementById("node").innerHTML = "" + nodejs
+
+            }
+            function GetCheckedState() {
+                var input = document.getElementById("myInpu");
+                var isChecked = input.checked;
+
+                isChecked = (isChecked) ? "angular" : "";
+
+                document.getElementById("mas").innerHTML = "" + isChecked
+            }
+            function GetChecked() {
+
+                var input = document.getElementById("myInput");
+                var isChecked = input.checked;
+
+                isChecked = (isChecked) ? "javascript" : "";
+                document.getElementById("fem").innerHTML = "" + isChecked
+
+
+            }
+
+            var status = false;
+            function flname() {
+                var status = true;
+                var fname = document.getElementById("fname").value;
+                var lname = document.getElementById("lname").value
+                var intials = fname.charAt(0) + lname.charAt(0);
+
+
+                var fl = document.getElementById("profileImage").innerHTML = "" + intials;
+
+            }
+
+
+
+
+
+            function female() {
+                var female = document.getElementsByName("female").innerHTML = "naveenraj";
+                var fem = document.getElementById("femal").innerHTML = "" + female
+            }
+
+
+        </script>
+    </body>
+</htm>

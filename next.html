@@ -1,1 +1,70 @@
-<h1>saikumar</h1>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <input type="radio" name="male" id="male" value="male" onclick="male()"> Male<br>
+    <input type="radio" name="male" id="female" value="female" onclick="female()"> Female<br>
+    <input type="radio" name="male" id="other" value="other"> Other
+    <p id="ma"></p>
+
+    <script>
+      
+      
+        function male(){
+           
+            var male=document.getElementsByName("male");
+            alert("hAI"+male);
+            document.getElementsById("ma").innerHTML="output is";
+          
+        }
+
+         var selectArry = [{ name: "india", cities: ['ts', 'mp', 'od', 'tn', 'kr'] },
+        { name: "aus", cities: ['mr', 'sd', 'od', 'yu', 'gg'] }];
+        alert(selectArry)
+
+
+        for (k = 1; k <= 20; k++) {
+
+
+            for (i = 10; i >= 1; i--) {
+                if (k != 9 && k != 13 && k != 17) {
+                    document.write(k + "*" + i + "=" + i * k);
+                    document.write("<br>");
+                }
+
+            }
+            document.write("<br>");
+
+
+
+        }
+        var val = [3, 9, 7, 6, 5, 1];
+        var s = val.sort();
+
+        document.write(s)
+
+        for (i = 0; i < val.length; i++) {
+
+            // document.write("values"+val[i]+"<br>");
+            var swap = val[0];
+            val[0] = val[1];
+            val[1] = swap;
+            document.write("values" + swap + "<br>");
+
+        }
+
+
+        var s = ['sai', 'kumar', 'mahe', 'naven', 'venu'];
+        s.forEach(e => document.write(e + "<br>"));
+
+        var animals = ['sai', 'kumar', 'mahe', 'naven', 'venu'];
+        var ad = animals.push('akram', 'aditya');
+
+        document.write(animals);
+    </script>
+</body>
+
+</html>
